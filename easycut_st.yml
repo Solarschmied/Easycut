@@ -1,0 +1,13 @@
+name: st-easycut
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python == 3.10.9
+  - pip
+  - pyscipopt == 4.2
+  - numpy == 1.23.5
+  - matplotlib == 3.7.1
+  - pandas == 1.5.3
+  - streamlit == 1.16.0
+  
