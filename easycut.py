@@ -245,7 +245,7 @@ if st.session_state['submitted']==True:
     if selection_num_prof == 1:
         df1 = pd.DataFrame({'Schienenlänge': Tracks, 'Überhang': data['overhang'], 'Mindestlänge': l_min})
         df1 = df1.iloc[::-1]
-        track_df= df1.style.hide_index()
+        track_df= df1.style.hide()
         st.markdown(""" # """)
         table1.write(track_df.to_html(), unsafe_allow_html=True)
         with plot1:
@@ -253,7 +253,7 @@ if st.session_state['submitted']==True:
 
         cut_data = {f"benötigte Profile mit Länge {Profile}": needed_profiles, 'Anzahl Schnitte': total_cuts, 'Verbinder': connectors, 'Gesamtverschnitt':loss}
         df2 = pd.DataFrame(cut_data.items())
-        cut_df = df2.style.hide_index()
+        cut_df = df2.style.hide()
         cut_df.hide_columns()
         table2.write(cut_df.to_html(), unsafe_allow_html=True)
         with plot2:
@@ -261,7 +261,7 @@ if st.session_state['submitted']==True:
     else:
         df1 = pd.DataFrame({'Schienenlänge': Tracks, 'Überhang': data['overhang'], 'Mindestlänge': l_min})
         df1 = df1.iloc[::-1]
-        track_df = df1.style.hide_index()
+        track_df = df1.style.hide()
         table1.write(track_df.to_html(), unsafe_allow_html=True)
         with plot1:
             st.pyplot(vistrack_mp(Tracks,Full_profiles, Cut_items,Profiles))
@@ -272,7 +272,7 @@ if st.session_state['submitted']==True:
         cut_data = {'Anzahl Schnitte': total_cuts, 'Verbinder': int(connectors), 'Gesamtverschnitt':loss}
         p_data.update(cut_data)
         df2 = pd.DataFrame(p_data.items())
-        cut_df = df2.style.hide_index()
+        cut_df = df2.style.hide()
         cut_df.hide_columns()
         table2.write(cut_df.to_html(), unsafe_allow_html=True)
         with plot2:
