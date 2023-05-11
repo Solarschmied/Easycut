@@ -253,8 +253,8 @@ if st.session_state['submitted']==True:
 
         cut_data = {f"benötigte Profile mit Länge {Profile}": needed_profiles, 'Anzahl Schnitte': total_cuts, 'Verbinder': connectors, 'Gesamtverschnitt':loss}
         df2 = pd.DataFrame(cut_data.items())
-        cut_df = df2.style.hide()
-        cut_df.style.hide(axis="columns")
+        c_df = df2.style.hide()
+        cut_df=c_df.style.hide(axis='columns')
         table2.write(cut_df.to_html(), unsafe_allow_html=True)
         with plot2:
             st.pyplot(viscut_sp(Cut_profiles, Profile))
