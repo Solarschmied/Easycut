@@ -272,8 +272,8 @@ if st.session_state['submitted']==True:
         cut_data = {'Anzahl Schnitte': total_cuts, 'Verbinder': int(connectors), 'Gesamtverschnitt':loss}
         p_data.update(cut_data)
         df2 = pd.DataFrame(p_data.items())
-        cut_df = df2.style.hide()
-        cut_df.style.hide(axis="columns")
+        c_df = df2.style.hide()
+        cut_df=c_df.style.hide(axis="columns")
         table2.write(cut_df.to_html(), unsafe_allow_html=True)
         with plot2:
             st.pyplot(viscut_mp(Cut_profiles, used_p_length))
